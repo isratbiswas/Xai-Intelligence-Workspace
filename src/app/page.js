@@ -1,9 +1,9 @@
-import Image from "next/image";
+import HomeLayout from "@/components/modules/Home/Home";
 
 export default function Home() {
   return (
     <div>
-      <h1>Welcome to Xai Intelligence Workspace</h1>
+      <HomeLayout />
     </div>
   );
 }
