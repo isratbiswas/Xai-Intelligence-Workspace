@@ -1,11 +1,14 @@
-import React from "react";
+"use client";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>
-      <h2>Footer Section</h2>
-    </div>
+    <footer className="py-16 px-8 text-center border-t border-accent/15 bg-secondary">
+      <p className="font-mono text-gray-400 text-sm mb-4">
+        Xai Intelligence Workspace © 2026
+      </p>
+      <p className="text-gray-500 text-xs">
+        Built with precision, powered by AI
+      </p>
+    </footer>
   );
-};
-
-export default Footer;
+}

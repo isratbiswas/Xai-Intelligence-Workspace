@@ -1,22 +1,16 @@
-import { Inter, Geist, Geist_Mono } from "next/font/google";
+import { Bai_Jamjuree, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const baiJamjuree = Bai_Jamjuree({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+  variable: "--font-bai-jamjuree",
 });
 
-const geistSans = Geist({
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
+  variable: "--font-space-mono",
 });
 
 export const metadata = {
@@ -30,9 +24,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`
-          ${inter.variable}
-          ${geistSans.variable}
-          ${geistMono.variable}
+          ${baiJamjuree.variable}
+          ${spaceMono.variable}
+        
           antialiased
         `}
       >
