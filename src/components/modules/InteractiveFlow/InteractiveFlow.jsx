@@ -42,7 +42,6 @@ export default function InteractiveFlow() {
   const sectionRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // Mouse move tracking
   const handleMouseMove = (e) => {
     const rect = sectionRef.current.getBoundingClientRect();
     setMousePos({
@@ -53,7 +52,6 @@ export default function InteractiveFlow() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate cards on scroll
       gsap.from(".flow-card", {
         y: 100,
         opacity: 0,
@@ -66,7 +64,6 @@ export default function InteractiveFlow() {
         },
       });
 
-      // Animate the connecting line
       gsap.from(".connect-line", {
         width: 0,
         duration: 2,
@@ -90,7 +87,6 @@ export default function InteractiveFlow() {
       className="relative py-32 bg-[#0A0E27] overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* Neon Glow Background */}
       <div
         className="absolute top-1/2 left-1/2 w-[800px] h-[400px] rounded-full pointer-events-none blur-[120px]"
         style={{
@@ -111,7 +107,6 @@ export default function InteractiveFlow() {
           </h3>
         </div>
 
-        {/* Connecting Line */}
         <div className="hidden lg:block absolute top-[60%] left-[10%] right-[10%] h-[2px] bg-white/5 z-0">
           <div className="connect-line h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
         </div>
@@ -120,7 +115,6 @@ export default function InteractiveFlow() {
           {flowData.map((item) => (
             <div key={item.id} className="flow-card group relative">
               <div className="relative p-1 rounded-[2rem] bg-gradient-to-b from-white/10 to-transparent transition-all duration-500 group-hover:from-cyan-400/40">
-                {/* Glassmorphism Card */}
                 <div
                   className="bg-[#0A0F29]/60 backdrop-blur-[20px] p-8 rounded-[1.9rem] h-full transition-transform duration-500 group-hover:scale-[0.98] border-2 border-transparent hover:border-cyan-500 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
                   style={{
@@ -128,7 +122,6 @@ export default function InteractiveFlow() {
                                 0 0 60px 10px rgba(34,211,238,0.2)`,
                   }}
                 >
-                  {/* ID Badge */}
                   <span
                     className={`inline-block text-transparent bg-clip-text bg-gradient-to-r ${item.color} font-black text-5xl mb-6 opacity-50`}
                   >
