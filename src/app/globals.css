@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -47,5 +47,88 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+ */
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.25s ease-out forwards;
+}
+
+@layer components {
+  .mouse-outline {
+    @apply w-[24px] h-[40px] border-2 border-cyan-400/30 rounded-full flex justify-center p-[6px];
+    animation: mouse-float 3s ease-in-out infinite;
+  }
+
+  .mouse-dot {
+    @apply w-[4px] h-[4px] bg-cyan-400 rounded-full;
+    /* Added 'alternate' so it goes down AND up */
+    animation: mouse-scroll 1.2s ease-in-out infinite alternate;
+  }
+
+  .flow-card {
+    perspective: 1000px;
+  }
+
+  .flow-card:hover .flow-bg {
+    box-shadow: 0 0 40px -10px rgba(34, 211, 238, 0.2);
+  }
+}
+
+@keyframes mouse-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Updated for Down-to-Up motion */
+@keyframes mouse-scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(18px); /* Moves to bottom */
+    opacity: 1; /* Keeps it visible while moving back up */
   }
 }

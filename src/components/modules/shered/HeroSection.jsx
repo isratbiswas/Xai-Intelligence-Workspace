@@ -135,6 +135,13 @@ export default function HeroHeader() {
             See How It Works
           </a>
         </div>
+        <div className="mt-16 flex justify-center pointer-events-none select-none">
+          <div className="mouse-container">
+            <div className="mouse-outline">
+              <div className="mouse-dot" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
