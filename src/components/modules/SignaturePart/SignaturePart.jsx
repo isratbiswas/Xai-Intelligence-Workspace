@@ -108,7 +108,7 @@ export default function SignatureSection() {
         position: "relative",
         overflow: "hidden",
         minHeight: "100vh",
-        display: "flex", // Centers content vertically and horizontally
+        display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
@@ -122,7 +122,7 @@ export default function SignatureSection() {
           width: "100%",
           height: "100%",
           zIndex: 1,
-          pointerEvents: "none", // Ensures clicks pass through to the button
+          pointerEvents: "none",
         }}
       />
       <div
@@ -132,14 +132,14 @@ export default function SignatureSection() {
           zIndex: 2,
           textAlign: "center",
           maxWidth: "800px",
-          width: "100%", // Responsive width
+          width: "100%",
           margin: "0 auto",
-          padding: "20px", // Responsive padding
+          padding: "20px",
         }}
       >
         <h2
           style={{
-            fontSize: "clamp(2.5rem, 8vw, 4rem)", // Fluid typography
+            fontSize: "clamp(2.5rem, 8vw, 4rem)",
             lineHeight: "1.1",
             marginBottom: "1.5rem",
             background: "linear-gradient(135deg, #00D9FF 0%, #FF6B9D 100%)",
@@ -152,7 +152,7 @@ export default function SignatureSection() {
         </h2>
         <p
           style={{
-            fontSize: "clamp(1rem, 4vw, 1.3rem)", // Fluid typography
+            fontSize: "clamp(1rem, 4vw, 1.3rem)",
             color: "#8B92A8",
             marginBottom: "2.5rem",
             lineHeight: "1.6",

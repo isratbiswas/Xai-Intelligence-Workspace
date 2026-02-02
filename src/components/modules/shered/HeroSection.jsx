@@ -115,7 +115,7 @@ export default function HeroHeader() {
           From Raw Data to <br /> Actionable Intelligence
         </h1>
 
-        <p className="text-gray-400 max-w-xl mx-auto mb-10 text-lg">
+        <p className="text-gray-300 max-w-xl mx-auto mb-10 text-lg">
           Xai transforms chaos into clarity. Process complex data streams,
           extract meaningful patterns, and automate decisions with confidence.
         </p>

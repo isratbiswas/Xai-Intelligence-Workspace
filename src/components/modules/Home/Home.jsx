@@ -1,4 +1,4 @@
-import DashboardCard from "../Dashboard/DashboardCard";
+"use";
 import Dashboard from "../Dashboard/DashboardOverview";
 import InteractiveFlow from "../InteractiveFlow/InteractiveFlow";
 import Footer from "../shered/Footer";
@@ -9,7 +9,7 @@ const HomeLayout = () => {
     <div>
       <HeroHeader />
       <InteractiveFlow />
-      {/* <Dashboard /> */}
+      <Dashboard />
       <SignatureSectionInteractive />
       <Footer />
     </div>

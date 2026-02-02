@@ -6,9 +6,7 @@ export default function Footer() {
       <p className="font-mono text-gray-400 text-sm mb-4">
         Xai Intelligence Workspace © 2026
       </p>
-      <p className="text-gray-500 text-xs">
-        Built with precision, powered by AI
-      </p>
+      <p className="text-gray-500 text-xs">Built with precision, Israt Jahan</p>
     </footer>
   );
 }

@@ -3,16 +3,22 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import IntelligenceChart from "./DashboardChart";
+import BarChart from "./DashboardChart";
+import DashboardHeader from "./DashboardHeader";
+import DashboardSidebar from "./DashboardSidebar";
 import DashboardCard from "./DashboardCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const chartHeights = ["60%", "75%", "45%", "90%", "65%", "80%", "95%"];
+const metrics = [
+  { label: "Data Processed", value: "847.2K", change: "↑ 23% this week" },
+  { label: "Active Insights", value: "142", change: "↑ 8 new today" },
+  { label: "Automation Rate", value: "94.7%", change: "↑ 2.3% improvement" },
+  { label: "Response Time", value: "47ms", change: "↓ 12ms faster" },
+];
 
 export default function Dashboard() {
   useEffect(() => {
-    // Animate dashboard container
     gsap.from(".dashboard-container", {
       opacity: 0,
       scale: 0.95,
@@ -23,99 +29,42 @@ export default function Dashboard() {
         start: "top 75%",
       },
     });
-
-    // Animate chart bars
-    gsap.utils.toArray(".chart-bar").forEach((bar, i) => {
-      gsap.from(bar, {
-        scaleY: 0,
-        duration: 0.8,
-        delay: i * 0.1,
-        ease: "power3.out",
-        transformOrigin: "bottom",
-        scrollTrigger: {
-          trigger: ".chart-container",
-          start: "top 80%",
-        },
-      });
-    });
   }, []);
 
   return (
-    <section className="py-20 px-4 bg-[#607B8F]">
+    <section id="dashboard" className="py-20 px-4  bg-[#30364F]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-text mb-2">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-text mb-4">
             Intelligence Dashboard
           </h2>
-          <p className="text-textMuted text-lg max-w-xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-xl mx-auto mt-2">
             Your command center for data-driven decisions
           </p>
         </div>
 
-        <div className="dashboard-container bg-primary rounded-3xl overflow-hidden border border-border shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
-          {/* Header */}
-          <div className="dashboard-header flex justify-between items-center p-6 border-b border-border bg-[rgba(26,31,58,0.5)] backdrop-blur-md">
-            <div className="dashboard-logo font-mono text-accent text-xl md:text-2xl font-bold">
-              XAI
-            </div>
-            <nav className="flex gap-8">
-              {["Overview", "Analytics", "Workflows", "Settings"].map(
-                (item, idx) => (
-                  <a
-                    key={idx}
-                    href="#"
-                    className={`${idx === 0 ? "text-accent relative" : "text-textMuted"} hover:text-text transition-colors`}
-                  >
-                    {item}
-                    {idx === 0 && (
-                      <span className="absolute bottom-[-0.5rem] left-0 right-0 h-0.5 bg-accent"></span>
-                    )}
-                  </a>
-                ),
-              )}
-            </nav>
-          </div>
+        <div className="dashboard-container bg-primary rounded-3xl overflow-hidden border border-cyan-600/10  shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+          <DashboardHeader />
 
-          {/* Body */}
           <div className="dashboard-body flex flex-col md:flex-row min-h-[600px]">
-            {/* Sidebar */}
-            <aside className="dashboard-sidebar w-full md:w-72 p-6 border-b md:border-b-0 md:border-r border-border bg-[rgba(20,25,54,0.5)]">
-              <div className="sidebar-section mb-8">
-                <h4 className="text-textMuted text-xs uppercase mb-3 tracking-wide">
-                  Workspace
-                </h4>
-                {["Dashboard", "Data Sources", "Workflows", "Reports"].map(
-                  (item, idx) => (
-                    <div
-                      key={idx}
-                      className={`sidebar-item flex items-center gap-3 px-3 py-2 rounded-md mb-2 cursor-pointer transition-all ${idx === 0 ? "active bg-[rgba(0,217,255,0.1)] border-l-4 border-accent text-accent" : "text-textMuted hover:bg-[rgba(0,217,255,0.05)] hover:text-text"}`}
-                    >
-                      <span>{["📊", "🔍", "⚡", "📈"][idx]}</span>
-                      <span>{item}</span>
-                    </div>
-                  ),
-                )}
-              </div>
+            <DashboardSidebar />
 
-              <div className="sidebar-section">
-                <h4 className="text-textMuted text-xs uppercase mb-3 tracking-wide">
-                  Intelligence
-                </h4>
-                {["Insights", "Alerts", "Automations"].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="sidebar-item flex items-center gap-3 px-3 py-2 rounded-md mb-2 cursor-pointer text-textMuted hover:bg-[rgba(0,217,255,0.05)] hover:text-text"
-                  >
-                    <span>{["🎯", "🔔", "🤖"][idx]}</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </aside>
+            <main className="dashboard-main flex-1 p-12 bg-[#0A0E27]">
+              <h2 className="dashboard-title text-2xl font-bold text-white mb-2">
+                Overview
+              </h2>
+              <p className="dashboard-subtitle text-gray-400 mb-12">
+                Real-time intelligence across your data ecosystem
+              </p>
 
-            {/* Main */}
-            <DashboardCard />
-            <IntelligenceChart />
+              <DashboardCard />
+
+              <div className="chart-container mt-8">
+                <div className="bg-surface border border-cyan-300/20 rounded-3xl p-4 md:p-8 shadow-2xl overflow-hidden h-[400px]">
+                  <BarChart />
+                </div>
+              </div>
+            </main>
           </div>
         </div>
       </div>
