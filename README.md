@@ -3,7 +3,7 @@
 A high-fidelity interactive product experience showcasing advanced frontend engineering, UI/UX design, and motion design.
 <h3><b>Frontend Live Link</b>:<a href="https://xai-intelligence.vercel.app">Xai-intelligence workspace</h3>
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project demonstrates a production-quality single-page application that visualizes how Xai transforms raw data into actionable intelligence. The experience combines Three.js 3D graphics, GSAP scroll animations, and Framer Motion to create an immersive product showcase.
 
@@ -13,7 +13,7 @@ This project demonstrates a production-quality single-page application that visu
 
 The UI walks users through this transformation using sophisticated animation, geometry, and interactive motion.
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
@@ -24,7 +24,7 @@ The UI walks users through this transformation using sophisticated animation, ge
   - Three.js (3D particle systems)
 - **Fonts**: Bai Jamjuree + Space Mono (via next/font)
 
-## ✨ Key Features
+##  Key Features
 
 ### 1. Hero Section – Data → Intelligence
 
@@ -58,7 +58,7 @@ The UI walks users through this transformation using sophisticated animation, ge
 - **Dynamic Connections**: Lines drawn between nearby particles
 - **Smooth 60fps Animation**: Optimized canvas rendering
 
-## 🎨 Design Decisions
+##  Design Decisions
 
 ### Color Palette
 
@@ -79,7 +79,7 @@ The UI walks users through this transformation using sophisticated animation, ge
 - **Performance First**: GPU-accelerated transforms, optimized particle systems
 - **Responsive Motion**: Animations adapt to user interaction (scroll, hover, cursor)
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -109,28 +109,28 @@ npm run build
 npm start
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 xai-workspace/
 ├── app/
-│   ├── layout.tsx          # Root layout with font configuration
-│   ├── page.tsx            # Main page orchestrating all sections
-│   └── globals.css         # Global styles and CSS variables
+│   ├── layout.jsx        
+│   ├── page.jsx            
+│   └── globals.css         
 ├── components/
-│   ├── HeroSection.tsx     # Three.js particle hero
-│   ├── InsightFlow.tsx     # Three-stage pipeline with GSAP
-│   ├── DashboardPreview.tsx # Interactive dashboard UI
-│   ├── SignatureSection.tsx # Canvas particle interaction
-│   └── Footer.tsx          # Simple footer component
-├── public/                 # Static assets
+│   ├── HeroSection.jsx     
+│   ├── InsightFlow.jsx     
+│   ├── DashboardPreview.jsx 
+│   ├── SignatureSection.jsx 
+│   └── Footer.tsx          
+├── public/                 
 ├── package.json
 ├── next.config.js
 ├── tailwind.config.js
-└── tsconfig.json
+└── jsconfig.json
 ```
 
-## 🎬 Animation Architecture
+##  Animation Architecture
 
 ### Three.js Hero (HeroSection)
 
@@ -159,7 +159,7 @@ xai-workspace/
 - **Connection Algorithm**: O(n²) proximity detection
 - **Render Loop**: RequestAnimationFrame for 60fps
 
-## 🎯 Design Principles
+##  Design Principles
 
 1. **Calm but Powerful**: Restrained aesthetics with technical confidence
 2. **Clarity of Intent**: Every element serves the product narrative
@@ -167,7 +167,7 @@ xai-workspace/
 4. **Professional Polish**: Stripe/Linear/Vercel-level execution quality
 5. **No Generic AI Aesthetics**: Distinctive typography and color choices
 
-## 📊 Performance Optimizations
+##  Performance Optimizations
 
 - **GPU Acceleration**: Transform-based animations (translateY, scale)
 - **Efficient Particle Rendering**: Canvas API with optimized draw calls
@@ -175,7 +175,7 @@ xai-workspace/
 - **React Optimization**: useRef for DOM references, useEffect cleanup
 - **Three.js Disposal**: Proper geometry/material cleanup on unmount
 
-## 🎥 Key Interaction Decisions
+##  Key Interaction Decisions
 
 ### Why These Animations?
 
@@ -192,16 +192,8 @@ xai-workspace/
 - **Hover Duration**: 0.3s for responsive but not jarring feedback
 - **Scroll Threshold**: 75-85% viewport for early reveals
 
-## 🚫 What We Avoided
 
-- ❌ Template libraries or UI kits
-- ❌ Stock illustrations or Lottie files
-- ❌ Generic font choices (Inter, Roboto)
-- ❌ Purple gradient clichés
-- ❌ Shallow, purposeless animations
-- ❌ Over-complicated navigation
-
-## 📝 Future Enhancements
+##  Future Enhancements
 
 - [ ] Mobile-responsive optimizations
 - [ ] WebGL shader effects for particles
@@ -210,18 +202,18 @@ xai-workspace/
 - [ ] Performance monitoring integration
 - [ ] Additional dashboard sections
 
-## 🏆 Evaluation Criteria Coverage
+##  Evaluation Criteria Coverage
 
 ✅ **UI/UX**: Professional hierarchy, distinctive typography, restrained design
 ✅ **Motion**: Purposeful animations, smooth 60fps, sophisticated easing
 ✅ **Engineering**: Clean components, reusable patterns, type safety
 ✅ **Product Thinking**: Clear narrative, intentional interactions, strategic reveals
 
-## 📄 License
+##  License
 
 This project is a demonstration piece for frontend engineering evaluation.
 
-## 🤝 Contact
+##  Contact
 
 For questions or discussions about implementation decisions, please reach out via the project repository.
 
