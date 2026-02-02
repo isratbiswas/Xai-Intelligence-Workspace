@@ -1,6 +1,7 @@
 # Xai – Intelligence Workspace
 
 A high-fidelity interactive product experience showcasing advanced frontend engineering, UI/UX design, and motion design.
+<h3><b>Frontend Live Link</b>:<a href="https://xai-intelligence.vercel.app">Xai-intelligence workspace</h3>
 
 ## 🎯 Project Overview
 
